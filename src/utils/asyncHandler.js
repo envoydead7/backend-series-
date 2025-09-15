@@ -1,16 +1,16 @@
 //try catch method 
 
-const asynchandler = (fn) => async (req, res, next) => {
-    try {
-       await fn(req, res, next); 
-    } catch (error) {
-        res.status(err.code || 500).json({
-            success: false,
-            message: error.message
-        });
+// const asynchandler = (fn) => async (req, res, next) => {
+//     try {
+//        await fn(req, res, next); 
+//     } catch (error) {
+//         res.status(err.code || 500).json({
+//             success: false,
+//             message: error.message
+//         });
         
-    }
-}
+//     }
+// }
 
 // promise method 
 
@@ -20,4 +20,4 @@ const asyncHandler = (requestHandler) => {
     }
 }
 
-export {asynchandler};
+export { asyncHandler };
