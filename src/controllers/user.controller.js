@@ -24,7 +24,8 @@ const generateAccessAndRefreshToken = async (userId) => {
 const refreshAccessToken = asyncHandler(async (req, res) => {
     const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
     
-    if(incomingRefreshToken){
+    //check if token is present
+    if(!incomingRefreshToken){
         throw new ApiError(401, "unauathorized request");
     };
 
